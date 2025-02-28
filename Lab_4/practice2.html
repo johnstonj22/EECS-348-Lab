@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Change Paragraph Color</title>
+  <style>
+    #paragraph {
+      border-style: solid;
+      border-width: 5px;
+      padding: 10px;
+    }
+  </style>
+</head>
+<body>
+  <h1>EECS 348 Lab four practice 2</h1>
+  <div id="paragraph">Alter me by typing in numbers</div>
+  
+  <br> Border R(0-255): 
+  <input type="text" id="border_R" value=""> 
+  <br> Border G(0-255): 
+  <input type="text" id="border_G" value=""> 
+  <br> Border B(0-255):
+  <input type="text" id="border_B" value=""> 
+  <br> Border Width:
+  <input type="text" id="border_width" value="">
+  <br> Background R(0-255):
+  <input type="text" id="bg_R" value="">
+  <br> Background G(0-255):
+  <input type="text" id="bg_G" value="">
+  <br> Background B(0-255):
+  <input type="text" id="bg_B" value="">
+  <br>
+  
+  <button onclick="alert_paragraph_color()">Change the color!</button>
+
+  <script type="text/javascript">
+    function alert_paragraph_color() {
+      // Get the values from the input fields
+      const borderR = document.getElementById('border_R').value;
+      const borderG = document.getElementById('border_G').value;
+      const borderB = document.getElementById('border_B').value;
+      const borderWidth = document.getElementById('border_width').value;
+      
+      const bgR = document.getElementById('bg_R').value;
+      const bgG = document.getElementById('bg_G').value;
+      const bgB = document.getElementById('bg_B').value;
+
+      // Get the paragraph element
+      const paragraph = document.getElementById('paragraph');
+      
+      // Set the styles
+      paragraph.style.borderColor = `rgb(${borderR}, ${borderG}, ${borderB})`;
+      paragraph.style.borderWidth = `${borderWidth}px`;  // This sets the border width
+      paragraph.style.backgroundColor = `rgb(${bgR}, ${bgG}, ${bgB})`;
+
+      // Show an alert with the new color values
+      alert(`The new colors are:\nBorder: rgb(${borderR}, ${borderG}, ${borderB})\nBackground: rgb(${bgR}, ${bgG}, ${bgB})\nBorder Width: ${borderWidth}px`);
+    }
+  </script>
+</body>
+</html>
