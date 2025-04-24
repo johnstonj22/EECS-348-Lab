@@ -1,0 +1,21 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>EECS 348 Lab Four Practice 3</h1>
+  First Password: <input type="text" id="pass1" value=""> <br>
+  Second Password: <input type="text" id="pass2" value=""> <br>
+  <script>
+   function validate() {
+    const pass1 = document.getElementById("pass1").value;
+    const pass2 = document.getElementById("pass2").value;
+    if (pass1 === pass2) {
+     alert("Passwords match! Validation successful.");
+    } else {
+     alert("Passwords do not match. Please try again.");
+    }
+   }
+  </script>
+  <button onclick="validate()">Validate Your Passwords</button> <br>
+ </body>
+</html>
